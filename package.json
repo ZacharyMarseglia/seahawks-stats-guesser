@@ -1,0 +1,33 @@
+{
+  "name": "seahawks-stats-guesser",
+  "version": "1.0.0",
+  "description": "A Wordle-style game where you guess Seattle Seahawks players by their stats",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "seahawks",
+    "wordle",
+    "game",
+    "nfl",
+    "football",
+    "stats",
+    "guessing"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR_USERNAME/seahawks-stats-guesser.git"
+  },
+  "homepage": "https://github.com/YOUR_USERNAME/seahawks-stats-guesser#readme"
+}

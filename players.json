@@ -1,0 +1,182 @@
+[
+  {
+    "first": "Geno",
+    "last": "Smith",
+    "position": "QB",
+    "side": "Offense",
+    "number": 7,
+    "startYear": 2022,
+    "college": "West Virginia"
+  },
+  {
+    "first": "DK",
+    "last": "Metcalf",
+    "position": "WR",
+    "side": "Offense",
+    "number": 14,
+    "startYear": 2019,
+    "college": "Ole Miss"
+  },
+  {
+    "first": "Tyler",
+    "last": "Lockett",
+    "position": "WR",
+    "side": "Offense",
+    "number": 16,
+    "startYear": 2015,
+    "college": "Kansas State"
+  },
+  {
+    "first": "Jaxon",
+    "last": "Smith-Njigba",
+    "position": "WR",
+    "side": "Offense",
+    "number": 11,
+    "startYear": 2023,
+    "college": "Ohio State"
+  },
+  {
+    "first": "Kenneth",
+    "last": "Walker",
+    "position": "RB",
+    "side": "Offense",
+    "number": 9,
+    "startYear": 2022,
+    "college": "Michigan State"
+  },
+  {
+    "first": "Zach",
+    "last": "Charbonnet",
+    "position": "RB",
+    "side": "Offense",
+    "number": 25,
+    "startYear": 2023,
+    "college": "UCLA"
+  },
+  {
+    "first": "Bobby",
+    "last": "Wagner",
+    "position": "LB",
+    "side": "Defense",
+    "number": 45,
+    "startYear": 2012,
+    "college": "Utah State"
+  },
+  {
+    "first": "Jordyn",
+    "last": "Brooks",
+    "position": "LB",
+    "side": "Defense",
+    "number": 56,
+    "startYear": 2020,
+    "college": "Texas Tech"
+  },
+  {
+    "first": "Devon",
+    "last": "Witherspoon",
+    "position": "CB",
+    "side": "Defense",
+    "number": 21,
+    "startYear": 2023,
+    "college": "Illinois"
+  },
+  {
+    "first": "Riq",
+    "last": "Woolen",
+    "position": "CB",
+    "side": "Defense",
+    "number": 27,
+    "startYear": 2022,
+    "college": "UTSA"
+  },
+  {
+    "first": "Leonard",
+    "last": "Williams",
+    "position": "DT",
+    "side": "Defense",
+    "number": 99,
+    "startYear": 2023,
+    "college": "USC"
+  },
+  {
+    "first": "Jarran",
+    "last": "Reed",
+    "position": "DT",
+    "side": "Defense",
+    "number": 90,
+    "startYear": 2016,
+    "college": "Alabama"
+  },
+  {
+    "first": "Dre",
+    "last": "Mont",
+    "position": "DE",
+    "side": "Defense",
+    "number": 96,
+    "startYear": 2023,
+    "college": "Ohio State"
+  },
+  {
+    "first": "Uchenna",
+    "last": "Nwosu",
+    "position": "OLB",
+    "side": "Defense",
+    "number": 10,
+    "startYear": 2022,
+    "college": "USC"
+  },
+  {
+    "first": "Darrell",
+    "last": "Taylor",
+    "position": "OLB",
+    "side": "Defense",
+    "number": 52,
+    "startYear": 2020,
+    "college": "Tennessee"
+  },
+  {
+    "first": "Coby",
+    "last": "Bryant",
+    "position": "CB",
+    "side": "Defense",
+    "number": 8,
+    "startYear": 2022,
+    "college": "Cincinnati"
+  },
+  {
+    "first": "Noah",
+    "last": "Fant",
+    "position": "TE",
+    "side": "Offense",
+    "number": 88,
+    "startYear": 2022,
+    "college": "Iowa"
+  },
+  {
+    "first": "Will",
+    "last": "Dissly",
+    "position": "TE",
+    "side": "Offense",
+    "number": 89,
+    "startYear": 2018,
+    "college": "Washington"
+  },
+  {
+    "first": "Damien",
+    "last": "Lewis",
+    "position": "G",
+    "side": "Offense",
+    "number": 68,
+    "startYear": 2020,
+    "college": "LSU"
+  },
+  {
+    "first": "Charles",
+    "last": "Cross",
+    "position": "T",
+    "side": "Offense",
+    "number": 67,
+    "startYear": 2022,
+    "college": "Mississippi State"
+  }
+]

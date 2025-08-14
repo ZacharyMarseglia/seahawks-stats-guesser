@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test - Seahawks Stats Guesser</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #1a2332;
+            color: white;
+            padding: 20px;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #3a3f4b;
+            border-radius: 8px;
+        }
+        button {
+            background: #00d4aa;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        input {
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            border: 1px solid #3a3f4b;
+            background: #2d3748;
+            color: white;
+        }
+        .stat-tile {
+            display: inline-block;
+            width: 80px;
+            height: 60px;
+            border: 2px solid #3a3f4b;
+            border-radius: 8px;
+            margin: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            text-align: center;
+            background: #1a2332;
+        }
+        .correct { background: #10b981; }
+        .present { background: #f59e0b; }
+        .absent { background: #ef4444; }
+    </style>
+</head>
+<body>
+    <h1>Seahawks Stats Guesser - Test Mode</h1>
+    
+    <div class="test-section">
+        <h3>Test Data</h3>
+        <p>Current Player: <span id="currentPlayer">Loading...</span></p>
+        <p>Available Players: <span id="playerCount">Loading...</span></p>
+    </div>
+    
+    <div class="test-section">
+        <h3>Test Guess</h3>
+        <input type="text" id="testInput" placeholder="Enter player name" value="DK Metcalf">
+        <button onclick="testGuess()">Test Guess</button>
+        <button onclick="testRandomPlayer()">New Random Player</button>
+    </div>
+    
+    <div class="test-section">
+        <h3>Test Results</h3>
+        <div id="testResults"></div>
+    </div>
+    
+    <div class="test-section">
+        <h3>Console Log</h3>
+        <div id="consoleLog" style="background: #000; padding: 10px; border-radius: 5px; font-family: monospace; max-height: 200px; overflow-y: auto;"></div>
+    </div>
+
+    <script>
+        // Test data
+        const testPlayers = [
+            {
+                "first": "Geno",
+                "last": "Smith",
+                "position": "QB",
+                "side": "Offense",
+                "number": 7,
+                "startYear": 2022,
+                "college": "West Virginia"
+            },
+            {
+                "first": "DK",
+                "last": "Metcalf",
+                "position": "WR",
+                "side": "Offense",
+                "number": 14,
+                "startYear": 2019,
+                "college": "Ole Miss"
+            },
+            {
+                "first": "Tyler",
+                "last": "Lockett",
+                "position": "WR",
+                "side": "Offense",
+                "number": 16,
+                "startYear": 2015,
+                "college": "Kansas State"
+            }
+        ];
+        
+        let currentPlayer = testPlayers[1]; // DK Metcalf
+        
+        function log(message) {
+            console.log(message);
+            const logDiv = document.getElementById('consoleLog');
+            logDiv.innerHTML += message + '<br>';
+            logDiv.scrollTop = logDiv.scrollHeight;
+        }
+        
+        function updateDisplay() {
+            document.getElementById('currentPlayer').textContent = `${currentPlayer.first} ${currentPlayer.last} (${currentPlayer.position})`;
+            document.getElementById('playerCount').textContent = testPlayers.length;
+        }
+        
+        function testGuess() {
+            const input = document.getElementById('testInput').value.trim();
+            log(`Testing guess: ${input}`);
+            
+            const guessedPlayer = testPlayers.find(player => 
+                `${player.first} ${player.last}`.toLowerCase() === input.toLowerCase() ||
+                player.last.toLowerCase() === input.toLowerCase()
+            );
+            
+            if (!guessedPlayer) {
+                log(`Player not found: ${input}`);
+                return;
+            }
+            
+            log(`Found player: ${guessedPlayer.first} ${guessedPlayer.last}`);
+            
+            // Process the guess
+            const stats = [
+                guessedPlayer.position,
+                guessedPlayer.side,
+                guessedPlayer.number.toString(),
+                guessedPlayer.startYear.toString(),
+                guessedPlayer.college
+            ];
+            
+            const correctStats = [
+                currentPlayer.position,
+                currentPlayer.side,
+                currentPlayer.number.toString(),
+                currentPlayer.startYear.toString(),
+                currentPlayer.college
+            ];
+            
+            log(`Guessed stats: ${stats.join(', ')}`);
+            log(`Correct stats: ${correctStats.join(', ')}`);
+            
+            // Display results
+            const resultsDiv = document.getElementById('testResults');
+            resultsDiv.innerHTML = '<h4>Guess Results:</h4>';
+            
+            stats.forEach((stat, index) => {
+                const tile = document.createElement('div');
+                tile.className = 'stat-tile';
+                tile.textContent = stat;
+                
+                if (stat === correctStats[index]) {
+                    tile.classList.add('correct');
+                    log(`Stat ${index} correct: ${stat}`);
+                } else if (isCloseStat(stat, correctStats[index], index)) {
+                    tile.classList.add('present');
+                    log(`Stat ${index} close: ${stat}`);
+                } else {
+                    tile.classList.add('absent');
+                    log(`Stat ${index} wrong: ${stat}`);
+                }
+                
+                resultsDiv.appendChild(tile);
+            });
+        }
+        
+        function isCloseStat(guessed, correct, statIndex) {
+            if (statIndex === 2) { // Number
+                const guessedNum = parseInt(guessed);
+                const correctNum = parseInt(correct);
+                return Math.abs(guessedNum - correctNum) <= 5;
+            } else if (statIndex === 3) { // Start Year
+                const guessedYear = parseInt(guessed);
+                const correctYear = parseInt(correct);
+                return Math.abs(guessedYear - correctYear) <= 2;
+            }
+            return false;
+        }
+        
+        function testRandomPlayer() {
+            currentPlayer = testPlayers[Math.floor(Math.random() * testPlayers.length)];
+            log(`New random player: ${currentPlayer.first} ${currentPlayer.last}`);
+            updateDisplay();
+            document.getElementById('testResults').innerHTML = '';
+        }
+        
+        // Initialize
+        updateDisplay();
+        log('Test mode initialized');
+    </script>
+</body>
+</html>

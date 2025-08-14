@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug - Seahawks Stats Guesser</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #1a2332;
+            color: white;
+            padding: 20px;
+        }
+        .debug-section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #3a3f4b;
+            border-radius: 8px;
+        }
+        button {
+            background: #00d4aa;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        input {
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            border: 1px solid #3a3f4b;
+            background: #2d3748;
+            color: white;
+        }
+        .stat-tile {
+            display: inline-block;
+            width: 80px;
+            height: 60px;
+            border: 2px solid #3a3f4b;
+            border-radius: 8px;
+            margin: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            text-align: center;
+            background: #1a2332;
+        }
+        .correct { background: #10b981; }
+        .present { background: #f59e0b; }
+        .absent { background: #ef4444; }
+        .error { background: #dc2626; }
+    </style>
+</head>
+<body>
+    <h1>Seahawks Stats Guesser - Debug Mode</h1>
+    
+    <div class="debug-section">
+        <h3>Server Test</h3>
+        <button onclick="testServer()">Test Server Connection</button>
+        <div id="serverStatus">Not tested</div>
+    </div>
+    
+    <div class="debug-section">
+        <h3>Data Test</h3>
+        <button onclick="testData()">Test Player Data</button>
+        <div id="dataStatus">Not tested</div>
+    </div>
+    
+    <div class="debug-section">
+        <h3>Game Test</h3>
+        <input type="text" id="testInput" placeholder="Enter player name" value="DK Metcalf">
+        <button onclick="testGame()">Test Game Logic</button>
+        <div id="gameStatus">Not tested</div>
+    </div>
+    
+    <div class="debug-section">
+        <h3>Console Log</h3>
+        <div id="consoleLog" style="background: #000; padding: 10px; border-radius: 5px; font-family: monospace; max-height: 300px; overflow-y: auto;"></div>
+    </div>
+
+    <script>
+        let players = [];
+        let currentPlayer = null;
+        
+        function log(message, type = 'info') {
+            console.log(message);
+            const logDiv = document.getElementById('consoleLog');
+            const timestamp = new Date().toLocaleTimeString();
+            const color = type === 'error' ? '#ef4444' : type === 'success' ? '#10b981' : '#ffffff';
+            logDiv.innerHTML += `<div style="color: ${color}">[${timestamp}] ${message}</div>`;
+            logDiv.scrollTop = logDiv.scrollHeight;
+        }
+        
+        async function testServer() {
+            log('Testing server connection...');
+            const statusDiv = document.getElementById('serverStatus');
+            
+            try {
+                // Test players endpoint
+                const playersResponse = await fetch('/players');
+                log(`Players endpoint status: ${playersResponse.status}`);
+                
+                if (playersResponse.ok) {
+                    const playersData = await playersResponse.json();
+                    log(`Players data received: ${playersData.players.length} players`);
+                    players = playersData.players;
+                    statusDiv.innerHTML = `<span style="color: #10b981">✅ Server connected, ${players.length} players loaded</span>`;
+                } else {
+                    throw new Error(`HTTP ${playersResponse.status}`);
+                }
+                
+                // Test word endpoint
+                const wordResponse = await fetch('/word');
+                log(`Word endpoint status: ${wordResponse.status}`);
+                
+                if (wordResponse.ok) {
+                    const wordData = await wordResponse.json();
+                    log(`Word data received: ${wordData.answer}`);
+                    
+                    // Find current player
+                    currentPlayer = players.find(p => p.last.toUpperCase() === wordData.answer);
+                    if (currentPlayer) {
+                        log(`Current player found: ${currentPlayer.first} ${currentPlayer.last}`);
+                        log(`Current player data:`, currentPlayer);
+                    } else {
+                        log(`❌ Could not find current player for answer: ${wordData.answer}`, 'error');
+                    }
+                } else {
+                    throw new Error(`HTTP ${wordResponse.status}`);
+                }
+                
+            } catch (error) {
+                log(`❌ Server test failed: ${error.message}`, 'error');
+                statusDiv.innerHTML = `<span style="color: #ef4444">❌ Server error: ${error.message}</span>`;
+            }
+        }
+        
+        function testData() {
+            log('Testing player data integrity...');
+            const statusDiv = document.getElementById('dataStatus');
+            
+            if (players.length === 0) {
+                log('❌ No players loaded', 'error');
+                statusDiv.innerHTML = '<span style="color: #ef4444">❌ No players loaded</span>';
+                return;
+            }
+            
+            const requiredProps = ['first', 'last', 'position', 'side', 'number', 'startYear', 'college'];
+            let allValid = true;
+            let invalidPlayers = [];
+            
+            players.forEach((player, index) => {
+                const missingProps = requiredProps.filter(prop => !player[prop]);
+                if (missingProps.length > 0) {
+                    allValid = false;
+                    invalidPlayers.push({ index, player, missingProps });
+                    log(`❌ Player ${index} missing properties: ${missingProps.join(', ')}`, 'error');
+                }
+            });
+            
+            if (allValid) {
+                log(`✅ All ${players.length} players have complete data`);
+                statusDiv.innerHTML = `<span style="color: #10b981">✅ All ${players.length} players valid</span>`;
+            } else {
+                log(`❌ ${invalidPlayers.length} players have incomplete data`, 'error');
+                statusDiv.innerHTML = `<span style="color: #ef4444">❌ ${invalidPlayers.length} invalid players</span>`;
+            }
+        }
+        
+        function testGame() {
+            log('Testing game logic...');
+            const statusDiv = document.getElementById('gameStatus');
+            
+            if (!currentPlayer) {
+                log('❌ No current player set', 'error');
+                statusDiv.innerHTML = '<span style="color: #ef4444">❌ No current player</span>';
+                return;
+            }
+            
+            const input = document.getElementById('testInput').value.trim();
+            if (!input) {
+                log('❌ No input provided', 'error');
+                return;
+            }
+            
+            log(`Testing guess: ${input}`);
+            
+            // Find the player
+            const guessedPlayer = players.find(player => 
+                `${player.first} ${player.last}`.toLowerCase() === input.toLowerCase() ||
+                player.last.toLowerCase() === input.toLowerCase()
+            );
+            
+            if (!guessedPlayer) {
+                log(`❌ Player not found: ${input}`, 'error');
+                statusDiv.innerHTML = `<span style="color: #ef4444">❌ Player not found: ${input}</span>`;
+                return;
+            }
+            
+            log(`✅ Found player: ${guessedPlayer.first} ${guessedPlayer.last}`);
+            log(`Guessed player data:`, guessedPlayer);
+            
+            // Test stat processing
+            try {
+                const stats = [
+                    guessedPlayer.position || 'Unknown',
+                    guessedPlayer.side || 'Unknown',
+                    (guessedPlayer.number || 0).toString(),
+                    (guessedPlayer.startYear || 0).toString(),
+                    guessedPlayer.college || 'Unknown'
+                ];
+                
+                const correctStats = [
+                    currentPlayer.position || 'Unknown',
+                    currentPlayer.side || 'Unknown',
+                    (currentPlayer.number || 0).toString(),
+                    (currentPlayer.startYear || 0).toString(),
+                    currentPlayer.college || 'Unknown'
+                ];
+                
+                log(`Guessed stats: ${stats.join(', ')}`);
+                log(`Correct stats: ${correctStats.join(', ')}`);
+                
+                // Count correct stats
+                let correctCount = 0;
+                stats.forEach((stat, index) => {
+                    if (stat === correctStats[index]) {
+                        correctCount++;
+                        log(`✅ Stat ${index} correct: ${stat}`);
+                    } else {
+                        log(`❌ Stat ${index} wrong: ${stat} vs ${correctStats[index]}`);
+                    }
+                });
+                
+                log(`Total correct: ${correctCount}/5`);
+                statusDiv.innerHTML = `<span style="color: #10b981">✅ Game logic test passed: ${correctCount}/5 correct</span>`;
+                
+            } catch (error) {
+                log(`❌ Game logic error: ${error.message}`, 'error');
+                statusDiv.innerHTML = `<span style="color: #ef4444">❌ Game logic error: ${error.message}</span>`;
+            }
+        }
+        
+        // Initialize
+        log('Debug mode initialized');
+    </script>
+</body>
+</html>
