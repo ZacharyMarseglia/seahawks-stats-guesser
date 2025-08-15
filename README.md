@@ -2,6 +2,7 @@ Seahawks Stats Guesser
 
 A Wordle-style guessing game where you try to identify Seattle Seahawks players by guessing their stats! Built with Node.js, Express, and vanilla JavaScript.
 
+Link to play:  https://guess-the-seahawk.onrender.com/
 How to Play
 
 1. Guess the player: Enter a Seahawks player's name (e.g., "Tyler Lockett" or "Lockett") // Not all current players will update when season starts.
