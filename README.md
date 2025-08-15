@@ -4,7 +4,7 @@ A Wordle-style guessing game where you try to identify Seattle Seahawks players 
 
 How to Play
 
-1. Guess the player: Enter a Seahawks player's name (e.g., "Tyler Lockett" or "Lockett") // Not current players will update when season starts.
+1. Guess the player: Enter a Seahawks player's name (e.g., "Tyler Lockett" or "Lockett") // Not all current players will update when season starts.
 2. Analyze the feedback:
    - 🟢 Green: Stat is exactly correct
    - 🟡 Orange: Stat is close (within range for numbers/years)
