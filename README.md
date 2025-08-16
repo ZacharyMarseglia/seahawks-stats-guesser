@@ -21,7 +21,7 @@ How to Play
 - Number: Jersey number (1-99)
 - Start Year: When they joined the Seahawks
 - College: Where they played college football
-- Close stats: Numbers within ±5, years within ±2 are marked orange
+- Close stats: Numbers within 5, years within ±2 are marked orange
 - 5 attempts maximum: No pressure, but limited tries!
 
 Features
