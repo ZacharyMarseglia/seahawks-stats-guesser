@@ -28,15 +28,6 @@ const fallbackPlayers = [
         "college": "Ole Miss"
     },
     {
-        "first": "Tyler",
-        "last": "Lockett",
-        "position": "WR",
-        "side": "Offense",
-        "number": 16,
-        "startYear": 2015,
-        "college": "Kansas State"
-    },
-    {
         "first": "Bobby",
         "last": "Wagner",
         "position": "LB",
