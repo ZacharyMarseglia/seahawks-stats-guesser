@@ -10,32 +10,41 @@ const MAX_ATTEMPTS = 5;
 // Fallback data in case server fails
 const fallbackPlayers = [
     {
-        "first": "Geno",
-        "last": "Smith",
+        "first": "Sam",
+        "last": "Darnold",
         "position": "QB",
         "side": "Offense",
-        "number": 7,
-        "startYear": 2022,
-        "college": "West Virginia"
+        "number": 14,
+        "startYear": 2025,
+        "college": "USC"
     },
     {
-        "first": "DK",
-        "last": "Metcalf",
+        "first": "Cooper",
+        "last": "Kupp",
         "position": "WR",
         "side": "Offense",
-        "number": 14,
-        "startYear": 2019,
-        "college": "Ole Miss"
+        "number": 10,
+        "startYear": 2025,
+        "college": "Eastern Washington"
     },
     {
-        "first": "Bobby",
-        "last": "Wagner",
-        "position": "LB",
+        "first": "Devin",
+        "last": "Witherspoon",
+        "position": "CB",
         "side": "Defense",
-        "number": 45,
-        "startYear": 2012,
-        "college": "Utah State"
+        "number": 21,
+        "startYear": 2023,
+        "college": "Illinois"
     }
+    {
+        "first": "Kenneth",
+        "last": "Walker III",
+        "position": "RB",
+        "side": "Offense",
+        "number": 9,
+        "startYear": 2022,
+        "college": "Michigan State"
+    }    
 ];
 
 // DOM elements
