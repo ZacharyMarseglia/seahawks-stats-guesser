@@ -116,7 +116,7 @@ async function initGame() {
         
         // Use fallback data
         players = fallbackPlayers;
-        currentPlayer = fallbackPlayers[1]; // DK Metcalf as default
+        currentPlayer = fallbackPlayers[1];
         
         // Populate datalist with fallback data
         players.forEach(player => {
