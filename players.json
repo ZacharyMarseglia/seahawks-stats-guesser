@@ -91,7 +91,7 @@
   },
   {
     "first": "Abraham",
-    "last": "Lucus",
+    "last": "Lucas",
     "position": "T",
     "side": "Offense",
     "number": 72,
@@ -232,5 +232,5 @@
     "number": 20,
     "startYear": 2023,
     "college": "Notre Dame"
-  },
+  }
 ]
