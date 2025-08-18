@@ -1,21 +1,30 @@
 [
  {
-        "first": "Sam",
-        "last": "Darnold",
-        "position": "QB",
-        "side": "Offense",
-        "number": 14,
-        "startYear": 2025,
-        "college": "USC"
+    "first": "Sam",
+    "last": "Darnold",
+    "position": "QB",
+    "side": "Offense",
+    "number": 14,
+    "startYear": 2025,
+    "college": "USC"
     },
   {
-        "first": "Cooper",
-        "last": "Kupp",
-        "position": "WR",
-        "side": "Offense",
-        "number": 10,
-        "startYear": 2025,
-        "college": "Eastern Washington"
+    "first": "Cooper",
+    "last": "Kupp",
+    "position": "WR",
+    "side": "Offense",
+    "number": 10,
+    "startYear": 2025,
+    "college": "Eastern Washington"
+  },
+  {
+    "first": "Jaxon",
+    "last": "Smith-Njigba",
+    "position": "WR",
+    "side": "Offense",
+    "number": 11,
+    "startYear": 2023,
+    "college": "Ohio State"
   },
   {
     "first": "Jake",
@@ -45,18 +54,63 @@
     "college": "UCLA"
   },
   {
-    "first": "Devon",
-    "last": "Witherspoon",
-    "position": "CB",
-    "side": "Defense",
-    "number": 21,
-    "startYear": 2023,
-    "college": "Illinois"
+    "first": "Charles",
+    "last": "Cross",
+    "position": "T",
+    "side": "Offense",
+    "number": 67,
+    "startYear": 2022,
+    "college": "Mississippi State"
   },
+  {
+    "first": "Grey",
+    "last": "Zabel",
+    "position": "G",
+    "side": "Offense",
+    "number": 76,
+    "startYear": 2025,
+    "college": "North Dakota State"
+  },
+  {
+    "first": "Olu",
+    "last": "Oluwatimi",
+    "position": "C",
+    "side": "Offense",
+    "number": 55,
+    "startYear": 2022,
+    "college": "Michigan"
+  },
+  {
+    "first": "Anthony",
+    "last": "Bradford",
+    "position": "G",
+    "side": "Offense",
+    "number": 75,
+    "startYear": 2023,
+    "college": "LSU"
+  },
+  {
+    "first": "Abraham",
+    "last": "Lucus",
+    "position": "T",
+    "side": "Offense",
+    "number": 72,
+    "startYear": 2022,
+    "college": "Washington State"
+  }, 
+   {
+    "first": "AJ",
+    "last": "Barner",
+    "position": "TE",
+    "side": "Offense",
+    "number": 88,
+    "startYear": 2024,
+    "college": "Michigan"
+  }, 
   {
     "first": "Leonard",
     "last": "Williams",
-    "position": "DT",
+    "position": "DE",
     "side": "Defense",
     "number": 99,
     "startYear": 2023,
@@ -72,6 +126,42 @@
     "college": "Alabama"
   },
   {
+    "first": "Bubba",
+    "last": "Thomas",
+    "position": "DT",
+    "side": "Defense",
+    "number": 69,
+    "startYear": 2025,
+    "college": "South Alabama"
+  },
+  {
+    "first": "Mike",
+    "last": "Morris",
+    "position": "DE",
+    "side": "Defense",
+    "number": 94,
+    "startYear": 2023,
+    "college": "Michigan"
+  }, 
+ {
+    "first": "Byron",
+    "last": "Murphy II",
+    "position": "DT",
+    "side": "Defense",
+    "number": 91,
+    "startYear": 2024,
+    "college": "Texas"
+  }, 
+  {
+    "first": "DeMarcus",
+    "last": "Lawrence",
+    "position": "DE",
+    "side": "Defense",
+    "number": 0,
+    "startYear": 2025,
+    "college": "Boise State"
+  }, 
+  {
     "first": "Uchenna",
     "last": "Nwosu",
     "position": "OLB",
@@ -79,6 +169,24 @@
     "number": 10,
     "startYear": 2022,
     "college": "USC"
+  },
+  {
+    "first": "Ernest",
+    "last": "Jones",
+    "position": "MLB",
+    "side": "Defense",
+    "number": 13,
+    "startYear": 2024,
+    "college": "South Carolina"
+  },
+  {
+    "first": "Tyrice",
+    "last": "Knight",
+    "position": "LB",
+    "side": "Defense",
+    "number": 48,
+    "startYear": 2024,
+    "college": "Texas-El Paso"
   },
   {
     "first": "Coby",
@@ -90,12 +198,39 @@
     "college": "Cincinnati"
   },
   {
-    "first": "Charles",
-    "last": "Cross",
-    "position": "T",
-    "side": "Offense",
-    "number": 67,
+    "first": "Derick",
+    "last": "Hall",
+    "position": "LB",
+    "side": "Defense",
+    "number": 58,
+    "startYear": 2023,
+    "college": "Auburn"
+  },
+  {
+    "first": "Devon",
+    "last": "Witherspoon",
+    "position": "CB",
+    "side": "Defense",
+    "number": 21,
+    "startYear": 2023,
+    "college": "Illinois"
+  },
+  {
+    "first": "Riq",
+    "last": "Woolen",
+    "position": "CB",
+    "side": "Defense",
+    "number": 27,
     "startYear": 2022,
-    "college": "Mississippi State"
-  }
+    "college": "Texas San Antonio"
+  },
+  {
+    "first": "Julian",
+    "last": "Love",
+    "position": "S",
+    "side": "Defense",
+    "number": 20,
+    "startYear": 2023,
+    "college": "Notre Dame"
+  },
 ]
