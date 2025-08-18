@@ -1,30 +1,30 @@
 [
+ {
+        "first": "Sam",
+        "last": "Darnold",
+        "position": "QB",
+        "side": "Offense",
+        "number": 14,
+        "startYear": 2025,
+        "college": "USC"
+    },
   {
-    "first": "Geno",
-    "last": "Smith",
-    "position": "QB",
-    "side": "Offense",
-    "number": 7,
-    "startYear": 2022,
-    "college": "West Virginia"
+        "first": "Cooper",
+        "last": "Kupp",
+        "position": "WR",
+        "side": "Offense",
+        "number": 10,
+        "startYear": 2025,
+        "college": "Eastern Washington"
   },
   {
-    "first": "DK",
-    "last": "Metcalf",
+    "first": "Jake",
+    "last": "Bobo",
     "position": "WR",
     "side": "Offense",
-    "number": 14,
-    "startYear": 2019,
-    "college": "Ole Miss"
-  },
-  {
-    "first": "Jaxon",
-    "last": "Smith-Njigba",
-    "position": "WR",
-    "side": "Offense",
-    "number": 11,
+    "number": 19,
     "startYear": 2023,
-    "college": "Ohio State"
+    "college": "Duke"
   },
   {
     "first": "Kenneth",
@@ -45,24 +45,6 @@
     "college": "UCLA"
   },
   {
-    "first": "Bobby",
-    "last": "Wagner",
-    "position": "LB",
-    "side": "Defense",
-    "number": 45,
-    "startYear": 2012,
-    "college": "Utah State"
-  },
-  {
-    "first": "Jordyn",
-    "last": "Brooks",
-    "position": "LB",
-    "side": "Defense",
-    "number": 56,
-    "startYear": 2020,
-    "college": "Texas Tech"
-  },
-  {
     "first": "Devon",
     "last": "Witherspoon",
     "position": "CB",
@@ -70,15 +52,6 @@
     "number": 21,
     "startYear": 2023,
     "college": "Illinois"
-  },
-  {
-    "first": "Riq",
-    "last": "Woolen",
-    "position": "CB",
-    "side": "Defense",
-    "number": 27,
-    "startYear": 2022,
-    "college": "UTSA"
   },
   {
     "first": "Leonard",
@@ -99,15 +72,6 @@
     "college": "Alabama"
   },
   {
-    "first": "Dre",
-    "last": "Mont",
-    "position": "DE",
-    "side": "Defense",
-    "number": 96,
-    "startYear": 2023,
-    "college": "Ohio State"
-  },
-  {
     "first": "Uchenna",
     "last": "Nwosu",
     "position": "OLB",
@@ -117,15 +81,6 @@
     "college": "USC"
   },
   {
-    "first": "Darrell",
-    "last": "Taylor",
-    "position": "OLB",
-    "side": "Defense",
-    "number": 52,
-    "startYear": 2020,
-    "college": "Tennessee"
-  },
-  {
     "first": "Coby",
     "last": "Bryant",
     "position": "CB",
@@ -133,33 +88,6 @@
     "number": 8,
     "startYear": 2022,
     "college": "Cincinnati"
-  },
-  {
-    "first": "Noah",
-    "last": "Fant",
-    "position": "TE",
-    "side": "Offense",
-    "number": 88,
-    "startYear": 2022,
-    "college": "Iowa"
-  },
-  {
-    "first": "Will",
-    "last": "Dissly",
-    "position": "TE",
-    "side": "Offense",
-    "number": 89,
-    "startYear": 2018,
-    "college": "Washington"
-  },
-  {
-    "first": "Damien",
-    "last": "Lewis",
-    "position": "G",
-    "side": "Offense",
-    "number": 68,
-    "startYear": 2020,
-    "college": "LSU"
   },
   {
     "first": "Charles",
