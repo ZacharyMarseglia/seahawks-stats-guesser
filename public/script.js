@@ -35,7 +35,7 @@ const fallbackPlayers = [
         "number": 21,
         "startYear": 2023,
         "college": "Illinois"
-    }
+    },
     {
         "first": "Kenneth",
         "last": "Walker III",
