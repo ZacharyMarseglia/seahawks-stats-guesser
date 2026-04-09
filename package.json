@@ -26,9 +26,9 @@
   "engines": {
     "node": ">=16.0.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/YOUR_USERNAME/seahawks-stats-guesser.git"
-  },
-  "homepage": "https://github.com/YOUR_USERNAME/seahawks-stats-guesser#readme"
+"repository": {
+  "type": "git",
+  "url": "https://github.com/ZacharyMarseglia/seahawks-stats-guesser.git"
+},
+"homepage": "https://github.com/ZacharyMarseglia/seahawks-stats-guesser#readme"
 }
